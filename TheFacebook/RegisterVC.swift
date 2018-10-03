@@ -31,11 +31,15 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var femaleButton: UIButton!
     @IBOutlet weak var maleButton: UIButton!
     
+    @IBOutlet weak var footerView: UIView!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        configureFooterView()
         
         contentView_width.constant = self.view.frame.width * 5
         emailView_width.constant = self.view.frame.width
@@ -45,9 +49,29 @@ class RegisterVC: UIViewController {
         genderView_width.constant = self.view.frame.width
         
         let views : [UIView] = [emailTextField,firstNameTextField,lastNameTextField,passwordTextField,birthdayTextField,emailContinueButton,nameContinueButton,passwordContinueButton,birthdayContinue]
+        
+        let textFields : [UITextField] = [emailTextField,firstNameTextField,lastNameTextField,passwordTextField,birthdayTextField]
 
         cornerRadius(for: views)
         
+        addPadding(for: textFields)
+    }
+    
+    func addPadding(for textFields: [UITextField]) {
+        textFields.forEach { (textField) in
+            let blankView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
+            textField.leftView = blankView
+            textField.leftViewMode = .always
+        }
+        
+    }
+    
+    func configureFooterView() {
+        let topLine = CALayer()
+        topLine.borderWidth = 1
+        topLine.borderColor = UIColor.lightGray.cgColor
+        topLine.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 1)
+        footerView.layer.addSublayer(topLine)
     }
     
     func cornerRadius(for views: [UIView]) {
@@ -55,7 +79,6 @@ class RegisterVC: UIViewController {
             view.layer.cornerRadius = 5
             view.layer.masksToBounds = true
         }
-        
     }
     
     
