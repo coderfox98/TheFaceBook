@@ -64,6 +64,15 @@ class RegisterVC: UIViewController {
         datePicker.maximumDate = Calendar.current.date(byAdding: .year, value: -5, to: Date())
         datePicker.addTarget(self, action: #selector(self.datePickerDidChange(_:)), for: .valueChanged)
         birthdayTextField.inputView = datePicker
+        
+        //implementation of swipe gesture
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
+        swipe.direction = .right
+        self.view.addGestureRecognizer(swipe)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        self.scrollView.addGestureRecognizer(tap)
+        
     }
     
     func addPadding(for textFields: [UITextField]) {
@@ -113,6 +122,27 @@ class RegisterVC: UIViewController {
                 }
             }
         
+    }
+    // called when the app is swiped to the right
+    @objc func handleGesture(_ gesture: UISwipeGestureRecognizer) {
+       let offset_x = scrollView.contentOffset.x
+        let new_x = CGPoint(x: offset_x - self.view.frame.width, y: 0)
+        if offset_x > 0 {
+        scrollView.setContentOffset(new_x, animated: true)
+            emailTextField.resignFirstResponder()
+            firstNameTextField.resignFirstResponder()
+            lastNameTextField.resignFirstResponder()
+            passwordTextField.resignFirstResponder()
+            birthdayTextField.resignFirstResponder()
+        }
+        }
+    
+    @objc func handleTap(_ gesture: UITapGestureRecognizer){
+        emailTextField.resignFirstResponder()
+        firstNameTextField.resignFirstResponder()
+        lastNameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        birthdayTextField.resignFirstResponder()
     }
     
     
