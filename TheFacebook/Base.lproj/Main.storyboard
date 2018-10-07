@@ -177,7 +177,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1875" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ton-3z-625">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ton-3z-625">
                                 <rect key="frame" x="0.0" y="0.0" width="1875" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMX-9s-msZ">
@@ -201,6 +201,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="textFieldDidChange:" destination="Wtk-fc-KHs" eventType="editingChanged" id="fbt-i4-pSM"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You'll use this email when you login and if you ever need to reset your password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5E0-qn-p9B">
                                                         <rect key="frame" x="20" y="187" width="335" height="36"/>
@@ -209,7 +212,7 @@
                                                         <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al0-Fe-tKF">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al0-Fe-tKF">
                                                         <rect key="frame" x="16" y="247" width="343" height="39"/>
                                                         <color key="backgroundColor" red="0.26084017749999999" green="0.40274846549999999" blue="0.69884943960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -219,6 +222,9 @@
                                                         <state key="normal" title="Continue">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="emailContinueButton_Tapped:" destination="Wtk-fc-KHs" eventType="touchUpInside" id="dyd-Zi-Uzv"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -256,6 +262,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="textFieldDidChange:" destination="Wtk-fc-KHs" eventType="editingChanged" id="Lpp-fO-ac7"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a combination of atleast 6 numbers, letters and punctuation marks (like ! and &amp;)." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0M-5s-bMQ">
                                                         <rect key="frame" x="20" y="187" width="335" height="36"/>
@@ -264,7 +273,7 @@
                                                         <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w41-u7-bG7">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w41-u7-bG7">
                                                         <rect key="frame" x="16" y="247" width="343" height="39"/>
                                                         <color key="backgroundColor" red="0.26084017749999999" green="0.40274846549999999" blue="0.69884943960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -274,6 +283,9 @@
                                                         <state key="normal" title="Continue">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="passwordContinueButton_Tapped:" destination="Wtk-fc-KHs" eventType="touchUpInside" id="VwX-cX-nKc"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -319,7 +331,7 @@
                                                         <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mef-09-FCa">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mef-09-FCa">
                                                         <rect key="frame" x="16" y="247" width="343" height="39"/>
                                                         <color key="backgroundColor" red="0.26084017749999999" green="0.40274846549999999" blue="0.69884943960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -329,6 +341,9 @@
                                                         <state key="normal" title="Continue">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="birthdayContinueButton_Tapped:" destination="Wtk-fc-KHs" eventType="touchUpInside" id="ypa-lE-szb"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -418,6 +433,9 @@
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="textFieldDidChange:" destination="Wtk-fc-KHs" eventType="editingChanged" id="w7s-mu-XU6"/>
+                                                                </connections>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cu0-AK-jJ5">
                                                                 <rect key="frame" x="183" y="0.0" width="160" height="35"/>
@@ -425,6 +443,9 @@
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="textFieldDidChange:" destination="Wtk-fc-KHs" eventType="editingChanged" id="Ccd-5U-Ndd"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                         <constraints>
@@ -439,7 +460,7 @@
                                                         <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lir-bk-h3R">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lir-bk-h3R">
                                                         <rect key="frame" x="16" y="247" width="343" height="39"/>
                                                         <color key="backgroundColor" red="0.26084017749999999" green="0.40274846549999999" blue="0.69884943960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -449,6 +470,9 @@
                                                         <state key="normal" title="Continue">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="fullNameContinueButtton_tapped:" destination="Wtk-fc-KHs" eventType="touchUpInside" id="CfZ-T7-qDa"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -559,6 +583,7 @@
                         <outlet property="passwordContinueButton" destination="w41-u7-bG7" id="H6G-1b-5Cc"/>
                         <outlet property="passwordTextField" destination="Zpf-p6-y74" id="AM8-yY-zOo"/>
                         <outlet property="passwordView_width" destination="g3I-nq-VbE" id="4b5-dU-J50"/>
+                        <outlet property="scrollView" destination="Ton-3z-625" id="Ofz-W7-hh8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31B-lO-drX" userLabel="First Responder" sceneMemberID="firstResponder"/>
