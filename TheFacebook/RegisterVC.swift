@@ -215,4 +215,46 @@ class RegisterVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func genderButton_clicked(_ sender: UIButton) {
+        
+        //STEP:1 declaring URL of the request; declaring body to the URL; declaring request with post(safest method)
+        let url = URL(string: "http://localhost/fb/register.php")!
+        
+        let body = "email=\(emailTextField.text!)&firstName=\(firstNameTextField.text!)&lastName=\(lastNameTextField.text!)&password=\(passwordTextField.text!)&birthday=\(birthdayTextField.text!)&gender=\(sender.tag)"
+        
+        var request = URLRequest(url: url)
+        request.httpBody = body.data(using: .utf8)
+        request.httpMethod = "POST"
+        
+        //STEP:2 Execute created above request
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            let helper = Helper()
+            //error
+            if error != nil {
+                
+                helper.showAlert(title: "Server Error", message: error!.localizedDescription, from: self)
+                return
+            }
+            
+            // fetch JSON from server
+            do {
+                
+                guard let data = data else {
+                    helper.showAlert(title: "Data Error", message: error!.localizedDescription, from: self)
+                    return
+                }
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSDictionary
+                print(json)
+                
+                
+            } catch {
+                helper.showAlert(title: "JSON ERROR", message: error.localizedDescription, from: self)
+            }
+            
+            
+        }.resume()
+        
+    }
+    
+    
 }

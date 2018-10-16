@@ -28,4 +28,14 @@ class Helper {
         
         return result
     }
+    
+    // show alert message to the user
+    func showAlert(title: String,message: String, from: UIViewController) {
+        
+        // creating alertcontroller
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        alert.addAction(ok)
+        from.present(alert, animated: true, completion: nil)
+    }
 }

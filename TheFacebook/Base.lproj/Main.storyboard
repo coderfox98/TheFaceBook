@@ -373,28 +373,34 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can change this later in your settings." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWX-Oo-u1k">
-                                                        <rect key="frame" x="20" y="314" width="335" height="18.5"/>
+                                                        <rect key="frame" x="20" y="329" width="335" height="18.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                         <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="Dxi-BC-DBI">
-                                                        <rect key="frame" x="57.5" y="181" width="260" height="101"/>
+                                                        <rect key="frame" x="57.5" y="181" width="260" height="116"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFn-bD-gbk">
-                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="101"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="116"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="fFn-bD-gbk" secondAttribute="height" multiplier="100:101" id="Uct-Fc-pn6"/>
+                                                                    <constraint firstAttribute="width" secondItem="fFn-bD-gbk" secondAttribute="height" multiplier="87:101" id="Uct-Fc-pn6"/>
                                                                 </constraints>
                                                                 <state key="normal" image="Female"/>
+                                                                <connections>
+                                                                    <action selector="genderButton_clicked:" destination="Wtk-fc-KHs" eventType="touchUpInside" id="DG7-Fg-bUw"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8q-Pr-VdI">
-                                                                <rect key="frame" x="160" y="0.0" width="100" height="101"/>
+                                                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8q-Pr-VdI">
+                                                                <rect key="frame" x="160" y="0.0" width="100" height="116"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="K8q-Pr-VdI" secondAttribute="height" multiplier="100:101" id="Tst-Co-kQk"/>
+                                                                    <constraint firstAttribute="width" secondItem="K8q-Pr-VdI" secondAttribute="height" multiplier="87:101" id="InP-LZ-xws"/>
                                                                 </constraints>
                                                                 <state key="normal" image="Male"/>
+                                                                <connections>
+                                                                    <action selector="genderButton_clicked:" destination="Wtk-fc-KHs" eventType="touchUpInside" id="oxe-CW-BMX"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
